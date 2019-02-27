@@ -12,8 +12,9 @@
     <title>List</title>
 
 </head>
+<!--All CRUD operations in one form-->
 <h1>Course List</h1><br/>
-<a href="/add">Add a Course</a><br/>
+<a href="/add">Add a Course</a><br/><!-- Create -->
 <table style="width:100%">
     <tr>
         <th>Title</th>
@@ -27,9 +28,9 @@
         <td th:text = "${course.instructor}"></td></td>
         <td th:text = "${course.credit}"></td></td>
         <td>
-            <a th:href="@{/update/{id}(id=${course.id})}">Update</a>-
-            <a th:href="@{/detail/{id}(id=${course.id})}">Details</a>-
-            <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${course.id})}">Update</a>-<!-- Update -->
+            <a th:href="@{/detail/{id}(id=${course.id})}">Details</a>-<!-- Read -->
+            <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a><!-- Delete -->
         </td>
     </tr>
 </table>
