@@ -16,11 +16,15 @@
 <body>
 
 <a href="/">Show All Courses</a><br/>
+<table>
+    <tr>
+    <td>Title       :<span th:text="${course.title}"></span><br/></td>
+    <td>Instructor  :<span th:text="${course.instructor}"></span><br/></td>
+    <td>Description :<span th:text="${course.description}"></span><br/></td>
+    <td>Credits     :<span th:text="${course.credit}"></span><br/></td>
+    </tr>
+</table>
 
-Title       :<span th:text="${course.title}"></span><br/>
-Instructor  :<span th:text="${course.instructor}"></span><br/>
-Description :<span th:text="${course.description}"></span><br/>
-Credits     :<span th:text="${course.credit}"></span><br/>
 
 <a th:href="@{/delete/{id}(id=${course.id})}">Delete this course</a>
 
