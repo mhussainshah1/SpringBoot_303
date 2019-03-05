@@ -19,7 +19,7 @@ public class HomeController {
     @RequestMapping("/")
     public String listCourses(Model model) {
         model.addAttribute("courses", courseRepository.findAll()); //generate select * statement
-        return "devtools";
+        return "list";
     }
 
     @GetMapping("/add")
@@ -39,8 +39,8 @@ public class HomeController {
 
     @RequestMapping("/detail/{id}")
     public String showCourse(@PathVariable("id") long id, Model model) {
-        //model.addAttribute("course", courseRepository.findById(id).get());
-        return "devtools";
+        model.addAttribute("course", courseRepository.findById(id).get());
+        return "show";
     }
 
     @RequestMapping("/update/{id}")
@@ -54,6 +54,4 @@ public class HomeController {
         courseRepository.deleteById(id);
         return "redirect:/";
     }
-
-
 }
