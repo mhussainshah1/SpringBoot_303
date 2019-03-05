@@ -16,12 +16,23 @@
 <body>
 
 <a href="/">Show All Courses</a><br/>
+<h1>I am awesome</h1>
 <table>
     <tr>
-    <td>Title       :<span th:text="${course.title}"></span><br/></td>
-    <td>Instructor  :<span th:text="${course.instructor}"></span><br/></td>
-    <td>Description :<span th:text="${course.description}"></span><br/></td>
-    <td>Credits     :<span th:text="${course.credit}"></span><br/></td>
+        <td>Title:</td>
+        <td> <span th:text="${course.title}"></span><br/></td>
+    </tr>
+    <tr>
+        <td>Instructor</td>
+        <td>:<span th:text="${course.instructor}"></span><br/></td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td> :<span th:text="${course.description}"></span><br/></td>
+    </tr>
+    <tr>
+        <td>Credits:</td>
+        <td><span th:text="${course.credit}"></span><br/></td>
     </tr>
 </table>
 
