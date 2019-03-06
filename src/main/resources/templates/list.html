@@ -8,10 +8,11 @@
 <body>
 <div th:replace="base::nav"></div>
 <!--All CRUD operations in one form-->
-<h1 align ="center">Course List</h1><br/>
-<a href="/add">Add a Course</a><br/><!-- Create -->
-<table style="width:100%">
+<h2 align ="center">Course List</h2><br/>
+<br/>
+<table class="table" style="width:100%">
     <tr>
+        <th>Select</th>
         <th>Title</th>
         <th>Instructor</th>
         <th>Credits</th>
@@ -19,16 +20,21 @@
     </tr>
     <!--enhanced for loop-->
     <tr th:each="course : ${courses}">
-        <td th:text = "${course.title}"></td></td>
-        <td th:text = "${course.instructor}"></td></td>
-        <td th:text = "${course.credit}"></td></td>
         <td>
-            <a th:href="@{/update/{id}(id=${course.id})}">Update</a>-<!-- Update -->
-            <a th:href="@{/detail/{id}(id=${course.id})}">Details</a>-<!-- Read -->
+            <input type="checkbox">
+        </td>
+        <td>
+            <a th:href="@{/detail/{id}(id=${course.id})}">[[${course.title}]]</a><!-- Read -->
+        </td>
+        <td th:text = "${course.instructor}"></td>
+        <td th:text = "${course.credit}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${course.id})}">Edit</a>-<!-- Update -->
             <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a><!-- Delete -->
         </td>
     </tr>
 </table>
+<br/>
 <div th:replace="base::footer"></div>
 </body>
 </html>
