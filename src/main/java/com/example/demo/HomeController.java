@@ -54,4 +54,9 @@ public class HomeController {
         courseRepository.deleteById(id);
         return "redirect:/";
     }
+
+    @GetMapping("/about")
+    public String getAbout(){
+        return "about";
+    }
 }
