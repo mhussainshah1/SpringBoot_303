@@ -6,10 +6,10 @@ use courses;
 select * from course;
 
 # Hibernate put aliases with (table / column name)number_0_
-#	Name	|		Alias 
+#	    Name	|		Alias
 #-------------------------
 # 	course	|	course_0
-#	id		|	id1_0_
+#	    id		|	id1_0_
 #
 #
 select course0_.id as id1_0_, 
