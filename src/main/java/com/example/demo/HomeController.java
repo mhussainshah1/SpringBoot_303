@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 @Controller
 public class HomeController {
@@ -47,21 +47,21 @@ public class HomeController {
     }
 
     @RequestMapping("/delete/{id}")
-    public String delCourse(@PathVariable("id") long id){
+    public String delCourse(@PathVariable("id") long id) {
         courseRepository.deleteById(id);
         return "redirect:/";
     }
 
     @RequestMapping("/delete")
-    public String delCourses(@RequestParam("check") long[] ids){
-        for(long id : ids){
+    public String delCourses(@RequestParam("check") long[] ids) {
+        for (long id : ids) {
             courseRepository.deleteById(id);
         }
         return "redirect:/";
     }
 
     @GetMapping("/about")
-    public String getAbout(){
+    public String getAbout() {
         return "about";
     }
 }
